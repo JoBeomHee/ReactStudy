@@ -1,56 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="container">
-      <div class="logo"></div>
-      <div class="item">시작하기</div>
-      <div class="item">채널</div>
-      <div class="item">광고</div>
-      <div class="item">서비스/도구</div>
-      <div class="item">파트너지원</div>
-      <button class="loginBtn">로그인</button>
-    </div>
-</head>
+<!----======== CSS ======== -->
+<link rel="stylesheet" href="style.css">
+
+<!--===== Boxicons CSS =====-->
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<title>Layout Test</title>
 
 <style>
-  .container {
-    padding: 20px;
+  body {
+    display: grid;
+
+    grid-template-areas:
+      "header header header header header"
+      "article article article article article"
+      "footer footer footer footer footer";
+    grid-template-rows: 50px 1fr 60px;
+    grid-template-columns: 10% 1fr 10%;
+    grid-gap: 1px;
+    height: 100vh;
+    margin: 0;
+  }
+
+  header {
+    padding: 1px;
+    margin: 0%;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  article {
+    padding: 1px;
+    margin: 0%;
+    color: white;
+    text-align: center;
+  }
+
+  footer {
+    padding: 1px;
+    margin: 0%;
+    background: orange;
+    color: white;
+    text-align: center;
+  }
+
+  #pageHeader {
+    grid-area: header;
+  }
+
+  #pageFooter {
+    grid-area: footer;
+  }
+
+  #mainArticle {
+    grid-area: article;
+  }
+
+  #mainNav {
+    grid-area: nav;
+  }
+
+  .logo {
+    width: 150px;
+    height: 50px;
+    background: url('https://business.kakao.com/static/img/logo_biz.34693d3_1.16.10.png') no-repeat center center;
+    background-size: contain;
+  }
+
+  .continer {
+    padding: 5px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
 
-    background-color: transparent;
     display: flex;
-    height: 100px;
-    color: black;
-    justify-content: left;
     align-items: center;
-    font-size: 15px;
+    height: 50px;
+    justify-content: left;
+    background-color: white;
+    text-align: center;
   }
 
-  .item {
-    padding: 20px;
+  .continer a {
+    color: black;
+    padding: 10px 16px;
+    font-size: 20px;
+    cursor: grab;
+  }
+
+  .continer a:hover {
+    background-color: transparent;
+    color: rgb(0, 195, 255);
+  }
+
+  .continer a.active {
+    background-color: #04AA6D;
+    color: white;
   }
 
   .loginBtn {
     margin-left: auto;
   }
 
-  .logo {
-    width: 130px;
-    height: 130px;
-    background: url('https://business.kakao.com/static/img/logo_biz.34693d3_1.16.10.png') no-repeat  center center;
+  .video {
+    max-width: 100%;
+    display: block;
+  }
+
+  .kakao_img {
+    width: 1500px;
+    height: 1500px;
+    background: url('https://business.kakao.com/static/img/visual_cont1.0cb2c10_1.16.10.png') no-repeat center center;
     background-size: contain;
   }
 </style>
 
 <body>
+  <header id="pageHeader">
+    <div class="continer">
+      <span class="logo"></span>
+      <a>시작하기</a>
+      <a>채널</a>
+      <a>광고</a>
+      <a>서비스/도구</a>
+      <a>파트너 지원</a>
+      <button class="loginBtn">로그인</button>
+    </div>
+  </header>
+  <article id="mainArticle">
+    <ul>
+      <li id="li">
+        <video muted autoplay loop class="video">
+          <source src="https://t1.kakaocdn.net/kakao_biz_common/public/movies/main_visual_210525.mp4" type="video/mp4">
+        </video>
+      </li>
+      <li id="li">
+        <span class="kakao_img"></span>
+      </li>
+    </ul>
+  </article>
+  <footer id="pageFooter"> 저작권 및 제작자 정보 </footer>
 </body>
-</html>
 
+</html>
