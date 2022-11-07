@@ -38,16 +38,8 @@
     grid-area: header;
   }
 
-  #pageFooter {
-    grid-area: footer;
-  }
-
   #mainArticle {
     grid-area: article;
-  }
-
-  #mainNav {
-    grid-area: nav;
   }
 
   .logo {
@@ -59,14 +51,11 @@
 
   .continer {
     padding: 5px;
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
 
     display: flex;
     align-items: center;
-    height: 50px;
     justify-content: left;
     background-color: white;
     text-align: center;
@@ -108,6 +97,7 @@
   .mp4-wrap {
     width: 100%;
     margin: 10px auto;
+    position: relative;
   }
 
   .user-text {
@@ -146,24 +136,24 @@
   </header>
   <article id="mainArticle">
     <div class="mp4-wrap">
-        <div class="mp4">
+        <div>
             <video muted autoplay loop class="video">
                 <source src="https://t1.kakaocdn.net/kakao_biz_common/public/movies/main_visual_210525.mp4" type="video/mp4">
             </video>
         </div>
         <div class="user-text">
-            <strong>비즈니스
-                <span>,</span>
-                톡처럼 쉬워지다
-                <br>
-                카카오비즈니스
-            </strong>
+          <strong>비즈니스
+              <span>,</span>
+              톡처럼 쉬워지다
+              <br>
+              카카오비즈니스
+          </strong>
         </div>
-        <div class="user-page">
-            <strong>
-                1 / 3
-            </strong>
-        </div>
+      <div class="user-page">
+          <strong>
+              1 / 3
+          </strong>
+      </div>
     </div>
     <div>
         <span class="kakao_img"></span>
