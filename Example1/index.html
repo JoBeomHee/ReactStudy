@@ -2,27 +2,20 @@
 <html>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>숙제1</title>
 
-<!----======== CSS ======== -->
 <link rel="stylesheet" href="style.css">
 
-<!--===== Boxicons CSS =====-->
-<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-<title>Layout Test</title>
-
 <style>
+  
   body {
     display: grid;
 
     grid-template-areas:
       "header header header header header"
-      "article article article article article"
-      "footer footer footer footer footer";
-    grid-template-rows: 50px 1fr 60px;
-    grid-template-columns: 10% 1fr 10%;
-    grid-gap: 1px;
-    height: 100vh;
+      "article article article article article";
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 10% 1fr;
     margin: 0;
   }
 
@@ -37,14 +30,6 @@
   article {
     padding: 1px;
     margin: 0%;
-    color: white;
-    text-align: center;
-  }
-
-  footer {
-    padding: 1px;
-    margin: 0%;
-    background: orange;
     color: white;
     text-align: center;
   }
@@ -114,10 +99,36 @@
   }
 
   .kakao_img {
-    width: 1500px;
-    height: 1500px;
+    height: 300px;
+    display: block;
     background: url('https://business.kakao.com/static/img/visual_cont1.0cb2c10_1.16.10.png') no-repeat center center;
-    background-size: contain;
+    background-size: cover;
+  }
+
+  .mp4-wrap {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .user-text {
+    position: absolute;
+    top: 70%;
+    width: 100%;
+    
+    font-size: 70px;
+    font-family: 'ypseo';
+    text-align: center;
+  }
+
+  .user-page {
+    position: absolute;
+    top: 90%;
+    right: 3%;
+    width: 100%;
+
+    font-size: 20px;
+    font-family: 'ypseo';
+    text-align: right;
   }
 </style>
 
@@ -125,27 +136,40 @@
   <header id="pageHeader">
     <div class="continer">
       <span class="logo"></span>
-      <a>시작하기</a>
-      <a>채널</a>
-      <a>광고</a>
-      <a>서비스/도구</a>
-      <a>파트너 지원</a>
+      <span><a>시작하기</a></span>
+      <span><a>채널</a></span>
+      <span><a>광고</a></span>
+      <span><a>서비스/도구</a></span>
+      <span><a>파트너 지원</a></span>
       <button class="loginBtn">로그인</button>
     </div>
   </header>
   <article id="mainArticle">
-    <ul>
-      <li id="li">
-        <video muted autoplay loop class="video">
-          <source src="https://t1.kakaocdn.net/kakao_biz_common/public/movies/main_visual_210525.mp4" type="video/mp4">
-        </video>
-      </li>
-      <li id="li">
+    <div class="mp4-wrap">
+        <div class="mp4">
+            <video muted autoplay loop class="video">
+                <source src="https://t1.kakaocdn.net/kakao_biz_common/public/movies/main_visual_210525.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="user-text">
+            <strong>비즈니스
+                <span>,</span>
+                톡처럼 쉬워지다
+                <br>
+                카카오비즈니스
+            </strong>
+        </div>
+        <div class="user-page">
+            <strong>
+                1 / 3
+            </strong>
+        </div>
+    </div>
+    <div>
         <span class="kakao_img"></span>
-      </li>
-    </ul>
+    </div>
   </article>
-  <footer id="pageFooter"> 저작권 및 제작자 정보 </footer>
+
 </body>
 
 </html>
